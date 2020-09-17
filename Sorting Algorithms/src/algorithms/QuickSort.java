@@ -6,30 +6,30 @@ import java.util.Random;
  * @author Nyk
  *
  */
-public class QuickSort implements AlgoritmoDeOrdenacaoRecursivo {
+public class QuickSort implements RecursiveSortingAlgorithm {
 	
 	public void sortFirstElementPivot(long[] vetor, int i, int f) {
 		
-		// Pivô: primeiro elemento
+		// Pivï¿½: primeiro elemento
 		long pivot = vetor[i];
 		
-		// Índices "E" e "D"
+		// ï¿½ndices "E" e "D"
 		int e = i, d = f;
 		
-		// Enquanto "E" e "D" não se cruzarem 
+		// Enquanto "E" e "D" nï¿½o se cruzarem 
 		while(e <= d) {
 			
-			// Enquanto "E" não passar do limite e
-			// o vetor[e] for menor ou igual ao pivô
+			// Enquanto "E" nï¿½o passar do limite e
+			// o vetor[e] for menor ou igual ao pivï¿½
 			while(e <= f && vetor[e] < pivot)
 				e++;
 			
-			// Enquanto "D" não passar do limite e
-			// o vetor[d] for maior ou igual ao pivô
+			// Enquanto "D" nï¿½o passar do limite e
+			// o vetor[d] for maior ou igual ao pivï¿½
 			while(d >= i && vetor[d] > pivot)
 				d--;
 			
-			// Se não se cruzaram, troca-se seus valores
+			// Se nï¿½o se cruzaram, troca-se seus valores
 			if(e <= d) {
 				long aux = vetor[e];
 				vetor[e] = vetor[d];
@@ -43,11 +43,11 @@ public class QuickSort implements AlgoritmoDeOrdenacaoRecursivo {
 		
 		// Se os elementos se cruzarem, faz-se as chamadas recursivas
 		if(e < f) {
-			// .. para de i até e
+			// .. para de i atï¿½ e
 			sortFirstElementPivot(vetor, e, f);
 		}
 		if(d > i) {			
-			// .. para de d até f 
+			// .. para de d atï¿½ f 
 			sortFirstElementPivot(vetor, i, d);
 		}
 	}

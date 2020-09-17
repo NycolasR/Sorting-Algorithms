@@ -7,24 +7,24 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class SelectionSort implements AlgoritmoDeOrdenacao {
+public class SelectionSort implements SortingAlgorithm {
 	
 	public long sort(long[] vetor) {
 		System.out.println("Selection Sort");
 		Instant inicio = Instant.now();
 		
 		for (int i = 0; i < vetor.length; i++) {			
-			// Identificando o índice de menor elemento de um vetor
-			int indiceMenor = i; // assume-se que o menor é o i-ésimo
+			// Identificando o ï¿½ndice de menor elemento de um vetor
+			int indiceMenor = i; // assume-se que o menor ï¿½ o i-ï¿½simo
 			
-			// A iteração em busca do menor valor deve acontecer após
-			// a posição do i, pois este trecho já está ordenado
+			// A iteraï¿½ï¿½o em busca do menor valor deve acontecer apï¿½s
+			// a posiï¿½ï¿½o do i, pois este trecho jï¿½ estï¿½ ordenado
 			for (int j = i+1; j < vetor.length; j++) {
 				if(vetor[j] < vetor[indiceMenor])
 					indiceMenor = j;
 			}
 			
-			// troca do i-ésimo valor com o menor valor encontrado
+			// troca do i-ï¿½simo valor com o menor valor encontrado
 			long aux = vetor[i];
 			vetor[i] = vetor[indiceMenor];
 			vetor[indiceMenor] = aux;

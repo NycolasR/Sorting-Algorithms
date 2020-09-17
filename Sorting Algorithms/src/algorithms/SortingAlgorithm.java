@@ -1,5 +1,5 @@
 package algorithms;
 
-public interface AlgoritmoDeOrdenacao {
+public interface SortingAlgorithm {
 	public long sort(long[] vetor);
 }

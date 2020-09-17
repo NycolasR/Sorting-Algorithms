@@ -5,20 +5,20 @@ import java.time.Instant;
 
 public class FacadeAlgorithms {
 	
-	private AlgoritmoDeOrdenacao algoritmo;
-	private AlgoritmoDeOrdenacaoRecursivo algoritmoRecursivo;
+	private SortingAlgorithm algoritmo;
+	private RecursiveSortingAlgorithm algoritmoRecursivo;
 	
-	public AlgoritmoDeOrdenacao getAlgoritmo() {
+	public SortingAlgorithm getAlgoritmo() {
 		return algoritmo;
 	}
-	public void setAlgoritmo(AlgoritmoDeOrdenacao algoritmo) {
+	public void setAlgoritmo(SortingAlgorithm algoritmo) {
 		this.algoritmo = algoritmo;
 	}
 
-	public AlgoritmoDeOrdenacaoRecursivo getAlgoritmoRecursivo() {
+	public RecursiveSortingAlgorithm getAlgoritmoRecursivo() {
 		return algoritmoRecursivo;
 	}
-	public void setAlgoritmoRecursivo(AlgoritmoDeOrdenacaoRecursivo algoritmoRecursivo) {
+	public void setAlgoritmoRecursivo(RecursiveSortingAlgorithm algoritmoRecursivo) {
 		this.algoritmoRecursivo = algoritmoRecursivo;
 	}
 

@@ -7,19 +7,19 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class BubbleSort implements AlgoritmoDeOrdenacao {
+public class BubbleSort implements SortingAlgorithm {
 	
 	public long sort(long[] vetor) {
 		System.out.println("Bubble Sort");
 		Instant inicio = Instant.now();
 		
-		// Se não houveram mudanças, o array já está ordenado
+		// Se nï¿½o houveram mudanï¿½as, o array jï¿½ estï¿½ ordenado
 		boolean hasChanged = true;
 		
 		while (hasChanged) {
 			hasChanged = false;
 			
-			// Contador para que o último elemento não seja analizado
+			// Contador para que o ï¿½ltimo elemento nï¿½o seja analizado
 			int j = 0;
 			
 			for (int i = 0; i < vetor.length -1 - j; i++) {

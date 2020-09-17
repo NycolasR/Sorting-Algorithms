@@ -7,7 +7,7 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class HeapSort implements AlgoritmoDeOrdenacao {
+public class HeapSort implements SortingAlgorithm {
 
 	public long sort(long[] vetor) {
 		System.out.println("Heap Sort");
@@ -15,21 +15,21 @@ public class HeapSort implements AlgoritmoDeOrdenacao {
 		
 		int f = vetor.length - 1;
 		
-		// Chamando o método para cada um dos elementos que fazem
-		// parte do vetor (de trás p/ a frente)
+		// Chamando o mï¿½todo para cada um dos elementos que fazem
+		// parte do vetor (de trï¿½s p/ a frente)
 		for(int i = f; i >= 0; i--) {
 			buildHeap(vetor, i, f);
 		}
 		
 		while(f > 0) {
 			
-			// Troca-se o elemento raiz pelo último da Heap Tree
+			// Troca-se o elemento raiz pelo ï¿½ltimo da Heap Tree
 			long aux = vetor[f];
 			vetor[f] = vetor[0];
 			vetor[0] = aux;
 			
 			// Reorganizar a Heap Tree
-			// f-- porque o último elemento já está ordenado
+			// f-- porque o ï¿½ltimo elemento jï¿½ estï¿½ ordenado
 			buildHeap(vetor, 0, --f);
 		}
 		
@@ -45,15 +45,15 @@ public class HeapSort implements AlgoritmoDeOrdenacao {
 	public static void buildHeap(long[] vetor, int i, int f) {
 		
 		while(i <= f) {
-			// Variável para guardar o índice do elemento que
+			// Variï¿½vel para guardar o ï¿½ndice do elemento que
 			// deve ser a raiz da Heap Tree
 			int maior = i;
 			
-			// Posições dos filhos de i
+			// Posiï¿½ï¿½es dos filhos de i
 			int e = 2*i+1;
 			int d = 2*i+2;
 			
-			// Identificando qual dos três é o maior
+			// Identificando qual dos trï¿½s ï¿½ o maior
 			if(e <= f && vetor[e] > vetor[maior]) {
 				maior = e;
 			}
@@ -61,7 +61,7 @@ public class HeapSort implements AlgoritmoDeOrdenacao {
 				maior = d;
 			}
 			
-			// Se o maior ainda for i, não se troca os elementos
+			// Se o maior ainda for i, nï¿½o se troca os elementos
 			if(maior != i) {
 				long aux = vetor[maior];
 				vetor[maior] = vetor[i];
