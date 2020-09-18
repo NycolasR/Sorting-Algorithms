@@ -14,17 +14,17 @@ public class SelectionSort implements SortingAlgorithm {
 		Instant inicio = Instant.now();
 		
 		for (int i = 0; i < vetor.length; i++) {			
-			// Identificando o �ndice de menor elemento de um vetor
-			int indiceMenor = i; // assume-se que o menor � o i-�simo
+			// Identificando o índice de menor elemento de um vetor
+			int indiceMenor = i; // assume-se que o menor é o i-ésimo
 			
-			// A itera��o em busca do menor valor deve acontecer ap�s
-			// a posi��o do i, pois este trecho j� est� ordenado
+			// A iteração em busca do menor valor deve acontecer após
+			// a posição do i, pois este trecho já está ordenado
 			for (int j = i+1; j < vetor.length; j++) {
 				if(vetor[j] < vetor[indiceMenor])
 					indiceMenor = j;
 			}
 			
-			// troca do i-�simo valor com o menor valor encontrado
+			// troca do i-ésimo valor com o menor valor encontrado
 			long aux = vetor[i];
 			vetor[i] = vetor[indiceMenor];
 			vetor[indiceMenor] = aux;

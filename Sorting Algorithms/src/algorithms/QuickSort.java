@@ -10,26 +10,26 @@ public class QuickSort implements RecursiveSortingAlgorithm {
 	
 	public void sortFirstElementPivot(long[] vetor, int i, int f) {
 		
-		// Piv�: primeiro elemento
+		// Pivô: primeiro elemento
 		long pivot = vetor[i];
 		
-		// �ndices "E" e "D"
+		// índices "E" e "D"
 		int e = i, d = f;
 		
-		// Enquanto "E" e "D" n�o se cruzarem 
+		// Enquanto "E" e "D" não se cruzarem 
 		while(e <= d) {
 			
-			// Enquanto "E" n�o passar do limite e
-			// o vetor[e] for menor ou igual ao piv�
+			// Enquanto "E" não passar do limite e
+			// o vetor[e] for menor ou igual ao pivô
 			while(e <= f && vetor[e] < pivot)
 				e++;
 			
-			// Enquanto "D" n�o passar do limite e
-			// o vetor[d] for maior ou igual ao piv�
+			// Enquanto "D" não passar do limite e
+			// o vetor[d] for maior ou igual ao pivô
 			while(d >= i && vetor[d] > pivot)
 				d--;
 			
-			// Se n�o se cruzaram, troca-se seus valores
+			// Se não se cruzaram, troca-se seus valores
 			if(e <= d) {
 				long aux = vetor[e];
 				vetor[e] = vetor[d];
@@ -43,11 +43,11 @@ public class QuickSort implements RecursiveSortingAlgorithm {
 		
 		// Se os elementos se cruzarem, faz-se as chamadas recursivas
 		if(e < f) {
-			// .. para de i at� e
+			// .. para de i até e
 			sortFirstElementPivot(vetor, e, f);
 		}
 		if(d > i) {			
-			// .. para de d at� f 
+			// .. para de d até f 
 			sortFirstElementPivot(vetor, i, d);
 		}
 	}

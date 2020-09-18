@@ -13,13 +13,13 @@ public class BubbleSort implements SortingAlgorithm {
 		System.out.println("Bubble Sort");
 		Instant inicio = Instant.now();
 		
-		// Se n�o houveram mudan�as, o array j� est� ordenado
+		// Se não houveram mudanças, o array já está ordenado
 		boolean hasChanged = true;
 		
 		while (hasChanged) {
 			hasChanged = false;
 			
-			// Contador para que o �ltimo elemento n�o seja analizado
+			// Contador para que o último elemento não seja analisado
 			int j = 0;
 			
 			for (int i = 0; i < vetor.length -1 - j; i++) {

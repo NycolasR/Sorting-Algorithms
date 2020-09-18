@@ -26,11 +26,11 @@ public class FacadeAlgorithms {
 		return algoritmo.sort(vetor);
 	}
 	
-	public long sort(long[] vetor, int i, int f, boolean isPivotRandom) {
+	public long sort(long[] vetor, boolean isPivotRandom) {
 		if(isPivotRandom) {
 			
 			Instant inicio = Instant.now();
-			algoritmoRecursivo.sortRandomPivot(vetor, i, f);
+			algoritmoRecursivo.sortRandomPivot(vetor, 0, vetor.length-1);
 			Instant fim = Instant.now();
 
 			Duration duracao = Duration.between(inicio, fim);
@@ -39,7 +39,7 @@ public class FacadeAlgorithms {
 		}
 		
 		Instant inicio = Instant.now();
-		algoritmoRecursivo.sortFirstElementPivot(vetor, i, f);
+		algoritmoRecursivo.sortFirstElementPivot(vetor, 0, vetor.length-1);
 		Instant fim = Instant.now();
 
 		Duration duracao = Duration.between(inicio, fim);

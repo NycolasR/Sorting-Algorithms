@@ -16,13 +16,13 @@ public class ArraysController {
 		this.facadeOrdenadores = facadeOrdenadores;
 	}
 	
-	public long[] sort(long[][] arrays) {
+	public double[] sort(long[][] arrays) {
 		// [0 - 5]: tempos para ordenar cada array.
-		// [6]: média dos 5 tempos
-		long[] milliseconds = new long[6];
+		// [6]: mï¿½dia dos 5 tempos
+		double[] milliseconds = new double[6];
 		
-		// Somatória dos tempos
-		long total = 0;
+		// Somatï¿½ria dos tempos
+		double total = 0;
 		
 		for(int i = 0; i < arrays.length; i++) {	
 			milliseconds[i] = facadeOrdenadores.sort(arrays[i]);
@@ -34,16 +34,26 @@ public class ArraysController {
 		return milliseconds;
 	}
 	
+	public double sort(long[] array) {
+		return facadeOrdenadores.sort(array);
+	}
+	
 	public double[] sort(long[][] arrays, boolean isPivotRandom) {
+		
+		if (isPivotRandom)
+			System.out.println("Quick Sort - PivÃ´ aleatÃ³rio ");
+		else
+			System.out.println("Quick Sort - PivÃ´ 1Âº Elemento ");
+		
 		// [0 - 5]: tempos para ordenar cada array.
-		// [6]: média dos 5 tempos
+		// [6]: mï¿½dia dos 5 tempos
 		double[] milliseconds = new double[6];
 		
-		// Somatória dos tempos
+		// Somatï¿½ria dos tempos
 		double total = 0;
 		
 		for(int i = 0; i < arrays.length; i++) {	
-			milliseconds[i] = facadeOrdenadores.sort(arrays[i], 0, arrays[i].length - 1, isPivotRandom);
+			milliseconds[i] = facadeOrdenadores.sort(arrays[i], isPivotRandom);
 			total += milliseconds[i]; 
 		}
 		
