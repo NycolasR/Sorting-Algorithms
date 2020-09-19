@@ -24,15 +24,24 @@ public class App {
 			arraysLength100000[i] = GeradorDeSequencias.geradorCinco(100000);
 		}
 		
-		FacadeAlgorithms facadeOrdenadores = new FacadeAlgorithms();
-		facadeOrdenadores.setAlgoritmoRecursivo(new QuickSort());
-		facadeOrdenadores.setAlgoritmo(new HeapSort());
+		FacadeAlgorithms facadeAlgorithms = new FacadeAlgorithms();
+		facadeAlgorithms.setAlgoritmoRecursivo(new QuickSort());
+		facadeAlgorithms.setAlgoritmo(new HeapSort());
 		
-		ArraysController arraysController = new ArraysController(facadeOrdenadores);
+		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
-		//arraysController.showArrays(arraysLength100000); System.out.println();
-		System.out.println(Arrays.toString(arraysController.sort(arraysLength100000, true)));
-		System.out.println();
+		/*
+		 * long[] array1 = GeradorDeSequencias.geradorCinco(1000000);
+		 * System.out.println(facadeAlgorithms.sort(array1, true));
+		 * 
+		 * long[] array2 = GeradorDeSequencias.geradorCinco(1000000);
+		 *System.out.println(facadeAlgorithms.sort(array2));
+		 */
+		
 		//arraysController.showArrays(arraysLength100000);
+		//System.out.println();
+		System.out.println(Arrays.toString(arraysController.sort(arraysLength100000)));
+		//System.out.println();
+		//arraysController.showArrays(arraysLength10000);
 	}
 }

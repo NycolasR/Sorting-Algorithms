@@ -15,7 +15,7 @@ public class HeapSort implements SortingAlgorithm {
 		
 		int f = vetor.length - 1;
 		
-		// Chamando o m�todo para cada um dos elementos que fazem
+		// Chamando o método para cada um dos elementos que fazem
 		// parte do vetor (de trás p/ a frente)
 		for(int i = f; i >= 0; i--) {
 			buildHeap(vetor, i, f);
@@ -45,7 +45,7 @@ public class HeapSort implements SortingAlgorithm {
 	public static void buildHeap(long[] vetor, int i, int f) {
 		
 		while(i <= f) {
-			// Vari�vel para guardar o índice do elemento que
+			// Variável para guardar o índice do elemento que
 			// deve ser a raiz da Heap Tree
 			int maior = i;
 			
