@@ -7,42 +7,43 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class HeapSort implements SortingAlgorithm {
-
-	public long sort(long[] vetor) {
+public class HeapSort extends SortingAlgorithm {
+	
+	@Override
+	public long sort(long[] array) {
 		System.out.println("Heap Sort");
-		Instant inicio = Instant.now();
+		Instant start = Instant.now();
 		
-		int f = vetor.length - 1;
+		int f = array.length - 1;
 		
 		// Chamando o método para cada um dos elementos que fazem
 		// parte do vetor (de trás p/ a frente)
 		for(int i = f; i >= 0; i--) {
-			buildHeap(vetor, i, f);
+			buildHeap(array, i, f);
 		}
 		
 		while(f > 0) {
 			
 			// Troca-se o elemento raiz pelo último da Heap Tree
-			long aux = vetor[f];
-			vetor[f] = vetor[0];
-			vetor[0] = aux;
+			long aux = array[f];
+			array[f] = array[0];
+			array[0] = aux;
 			
 			// Reorganizar a Heap Tree
 			// f-- porque o último elemento já está ordenado
-			buildHeap(vetor, 0, --f);
+			buildHeap(array, 0, --f);
 		}
 		
 		
-		Instant fim = Instant.now();
+		Instant end = Instant.now();
 
-		Duration duracao = Duration.between(inicio, fim);
-		long duracaoEmMilissegundos = duracao.toMillis();
-		return duracaoEmMilissegundos;
+		Duration duration = Duration.between(start, end);
+		long durationInMillisseconds = duration.toMillis();
+		return durationInMillisseconds;
 	}
 	
 	// Para organizar um vetor como uma Heap Tree
-	public static void buildHeap(long[] vetor, int i, int f) {
+	public static void buildHeap(long[] array, int i, int f) {
 		
 		while(i <= f) {
 			// Variável para guardar o índice do elemento que
@@ -54,18 +55,18 @@ public class HeapSort implements SortingAlgorithm {
 			int d = 2*i+2;
 			
 			// Identificando qual dos três é o maior
-			if(e <= f && vetor[e] > vetor[maior]) {
+			if(e <= f && array[e] > array[maior]) {
 				maior = e;
 			}
-			if(d <= f && vetor[d] > vetor[maior]) {
+			if(d <= f && array[d] > array[maior]) {
 				maior = d;
 			}
 			
 			// Se o maior ainda for i, não se troca os elementos
 			if(maior != i) {
-				long aux = vetor[maior];
-				vetor[maior] = vetor[i];
-				vetor[i] = aux;
+				long aux = array[maior];
+				array[maior] = array[i];
+				array[i] = aux;
 				
 				i = maior;
 			} else {

@@ -7,11 +7,12 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class BubbleSort implements SortingAlgorithm {
+public class BubbleSort extends SortingAlgorithm {
 	
-	public long sort(long[] vetor) {
+	@Override
+	public long sort(long[] array) {
 		System.out.println("Bubble Sort");
-		Instant inicio = Instant.now();
+		Instant start = Instant.now();
 		
 		// Se não houveram mudanças, o array já está ordenado
 		boolean hasChanged = true;
@@ -22,23 +23,23 @@ public class BubbleSort implements SortingAlgorithm {
 			// Contador para que o último elemento não seja analisado
 			int j = 0;
 			
-			for (int i = 0; i < vetor.length -1 - j; i++) {
+			for (int i = 0; i < array.length -1 - j; i++) {
 				
-				if(vetor[i] > vetor[i+1]) {
+				if(array[i] > array[i+1]) {
 					// Troca do valor com seu sucessor
-					long aux = vetor[i];
-					vetor[i] = vetor[i+1];
-					vetor[i+1] = aux;
+					long aux = array[i];
+					array[i] = array[i+1];
+					array[i+1] = aux;
 					hasChanged = true;			
 				}
 			}
 			j++;
 		}
 		
-		Instant fim = Instant.now();
+		Instant end = Instant.now();
 
-		Duration duracao = Duration.between(inicio, fim);
-		long duracaoEmMilissegundos = duracao.toMillis();
-		return duracaoEmMilissegundos;
-	}	
+		Duration duration = Duration.between(start, end);
+		long durationInMillisseconds = duration.toMillis();
+		return durationInMillisseconds;
+	}
 }

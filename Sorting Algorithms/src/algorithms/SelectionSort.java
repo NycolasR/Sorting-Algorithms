@@ -7,11 +7,12 @@ import java.time.Instant;
  * @author Nyk
  *
  */
-public class SelectionSort implements SortingAlgorithm {
+public class SelectionSort extends SortingAlgorithm {
 	
+	@Override
 	public long sort(long[] array) {
 		System.out.println("Selection Sort");
-		Instant inicio = Instant.now();
+		Instant start = Instant.now();
 		
 		for (int i = 0; i < array.length; i++) {			
 			// Identificando o índice de menor elemento de um vetor
@@ -32,7 +33,7 @@ public class SelectionSort implements SortingAlgorithm {
 		
 		Instant end = Instant.now();
 
-		Duration duration = Duration.between(inicio, end);
+		Duration duration = Duration.between(start, end);
 		long durationInMillisseconds = duration.toMillis();
 		return durationInMillisseconds;
 	}
