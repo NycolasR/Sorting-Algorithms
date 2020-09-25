@@ -38,7 +38,7 @@ public class ArraysController {
 		return facadeOrdenadores.sort(array);
 	}
 	
-	public double[] sort(long[][] arrays, int[] hs) {
+	public double[] sortWithShell(long[][] arrays,  boolean isFirstWay) {
 		// [0 - 5]: tempos para ordenar cada array.
 		// [6]: media dos 5 tempos
 		double[] milliseconds = new double[6];
@@ -47,7 +47,7 @@ public class ArraysController {
 		double total = 0;
 				
 		for(int i = 0; i < arrays.length; i++) {	
-			milliseconds[i] = facadeOrdenadores.sort(arrays[i], hs);
+			milliseconds[i] = facadeOrdenadores.sortWithShell(arrays[i], isFirstWay);
 			total += milliseconds[i]; 
 		}
 				

@@ -18,10 +18,6 @@ public class FacadeAlgorithms {
 		return algoritmo.sort(vetor);
 	}
 	
-	public long sort(long[] array, int[] hs) {
-		return algoritmo.sort(array, hs);
-	}
-	
 	public long sort(long[] vetor, boolean isPivotRandom) {
 		if(isPivotRandom) {
 			
@@ -42,4 +38,26 @@ public class FacadeAlgorithms {
 		long duracaoEmMilissegundos = duracao.toMillis();
 		return duracaoEmMilissegundos;
 	}
+	
+	public long sortWithShell(long[] array, boolean isFirstWay) {
+		return algoritmo.sort(array, isFirstWay);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

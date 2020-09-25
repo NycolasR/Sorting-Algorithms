@@ -2,6 +2,8 @@ package algorithms;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Nyk
@@ -10,18 +12,24 @@ import java.time.Instant;
 public class ShellSort extends SortingAlgorithm {
 	
 	@Override
-	public long sort(long[] array, int[] hs) {
-		System.out.println("Shell Sort");
+	public long sort(long[] array, boolean isFirstWay) {
+		System.out.print("Shell Sort: ");
+		System.out.println(isFirstWay ? "First Way" : "Second Way");
+		
+		ArrayList<Long> hs = isFirstWay ? this.calculateGapFirstWay(array) : this.calculateGapSecondWay(array);
+		
 		Instant start = Instant.now();
 		
-		for(int h: hs) {
+		for(long h: hs) {
+			int h_tmp = (int) h;
+//			System.out.println(h_tmp);
 			for(int i = 0; (i+h) < array.length; i++) { // (i+h) para não passar dos limites do array
-				int j = i + h;
+				int j = i + h_tmp;
 				long number = array[j];
 				
-				while((j-h) >= 0 && number < array[j-h]) { // (j-h) para não passar dos limites do array
-					array[j] = array[j-h];
-					j = j - h;
+				while((j-h) >= 0 && number < array[j-h_tmp]) { // (j-h) para não passar dos limites do array
+					array[j] = array[j-h_tmp];
+					j = j - h_tmp;
 				}
 				
 				array[j] = number;
@@ -34,4 +42,49 @@ public class ShellSort extends SortingAlgorithm {
 		long durationInMillisseconds = duration.toMillis();
 		return durationInMillisseconds;
 	}
+	
+	private ArrayList<Long> calculateGapFirstWay(long[] array) {
+		ArrayList<Long> hs = new ArrayList<Long>();
+		
+		for(long h = (long) (array.length / 2); h > 0; h /= 2) {
+			hs.add(h);
+		}
+		
+		return hs;
+	}
+	
+	private ArrayList<Long> calculateGapSecondWay(long[] array) {
+		ArrayList<Long> hs = new ArrayList<Long>();
+		
+		long h = 1;
+		
+		for(int k = 1; k < array.length; k++) {
+			if(!hs.isEmpty() && hs.get(k-2) == h)
+				break;
+			
+			hs.add(h);
+			h = (long) (Math.pow(4, k) + 3 * Math.pow(2, k-1) + 1);
+		}
+		System.out.println(hs);
+		Collections.reverse(hs);
+		return hs;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Arrays;
+
 import algorithms.*;
 import controllers.ArraysController;
 import controllers.GeradorDeSequencias;
@@ -49,12 +51,12 @@ public class App {
 		
 		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
-		int[] hs = {5, 2, 1};
+//		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 100, 134, 111, 234, 567};
 		
-//		arraysController.showArrays(arraysLength50);
-//		System.out.println();
-		System.out.println(arraysController.sort(arraysLength50, hs));
+		arraysController.showArrays(arraysLength500);
 		System.out.println();
-		arraysController.showArrays(arraysLength50);
+		System.out.println(Arrays.toString(arraysController.sortWithShell(arraysLength500, false)));
+		System.out.println();
+		arraysController.showArrays(arraysLength500);
 	}
 }
