@@ -34,8 +34,22 @@ public class ArraysController {
 		return milliseconds;
 	}
 	
-	public double sort(long[] array) {
-		return facadeOrdenadores.sort(array);
+	public double[] sortWithMerge(long[][] arrays) {
+		// [0 - 5]: tempos para ordenar cada array.
+		// [6]: media dos 5 tempos
+		double[] milliseconds = new double[6];
+		
+		// Somat�ria dos tempos
+		double total = 0;
+		
+		for(int i = 0; i < arrays.length; i++) {	
+			milliseconds[i] = facadeOrdenadores.sortWithMerge(arrays[i]);
+			total += milliseconds[i]; 
+		}
+		
+		milliseconds[5] = total / 5;
+		
+		return milliseconds;
 	}
 	
 	public double[] sortWithShell(long[][] arrays,  boolean isFirstWay) {

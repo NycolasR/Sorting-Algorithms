@@ -17,7 +17,7 @@ public abstract class SortingAlgorithm {
 	public long sort(long[] array, boolean isFirstWay) {
 		throw new UnsupportedOperationException();
 	}
-	public long sort(long[] array, int i, int m, int f) {
+	public void sortWithMerge(long[] array, int i, int f) {
 		throw new UnsupportedOperationException();
 	}
 }

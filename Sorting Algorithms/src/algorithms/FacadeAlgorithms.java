@@ -18,6 +18,16 @@ public class FacadeAlgorithms {
 		return algoritmo.sort(vetor);
 	}
 	
+	public long sortWithMerge(long[] array) {
+		System.out.println("Merge Sort");
+		Instant start = Instant.now();
+		algoritmo.sortWithMerge(array, 0, array.length - 1);
+		Instant end = Instant.now();
+		Duration duration = Duration.between(start, end);
+		long durationInMillisseconds = duration.toMillis();
+		return durationInMillisseconds;
+	}
+	
 	public long sort(long[] vetor, boolean isPivotRandom) {
 		if(isPivotRandom) {
 			

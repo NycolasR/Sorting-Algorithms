@@ -47,16 +47,16 @@ public class App {
 		
 		FacadeAlgorithms facadeAlgorithms = new FacadeAlgorithms();
 //		facadeAlgorithms.setAlgoritmo(new QuickSort());
-		facadeAlgorithms.setAlgoritmo(new ShellSort());
+		facadeAlgorithms.setAlgoritmo(new RadixSort());
 		
 		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
-//		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 100, 134, 111, 234, 567};
+		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 123};
 		
-//		arraysController.showArrays(arraysLength250000);
-//		System.out.println();
-		System.out.println(Arrays.toString(arraysController.sortWithShell(arraysLength250000, false)));
-//		System.out.println();
-//		arraysController.showArrays(arraysLength500);
+		arraysController.showArrays(arraysLength50);
+		System.out.println();
+		System.out.println(Arrays.toString(arraysController.sort(arraysLength50)));
+		System.out.println();
+		arraysController.showArrays(arraysLength50);
 	}
 }

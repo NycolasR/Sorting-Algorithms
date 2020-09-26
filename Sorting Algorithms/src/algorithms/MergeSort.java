@@ -1,26 +1,35 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class MergeSort extends SortingAlgorithm {
 	@Override
-	public long sort(long[] array, int i, int m, int f) {
-		return super.sort(array);
+	public void sortWithMerge(long[] array, int i, int f) {
+		
+		if(i < f) {
+			int middle = (i + f) / 2;
+			sortWithMerge(array, i, middle);
+			sortWithMerge(array, middle+1, f);
+			merge(array, i, middle, f);
+		}
+		
 	}
 	
-	private long[] merge(long[] array1, long[] array2) {
-		long[] array = new long[array1.length + array2.length];
+	private long[] merge(long[] array, int start, int middle, int end) {
+		long[] arrayAux = Arrays.copyOf(array, array.length);
 		
-		int i = 0;
-		int j = 0;
-		int pos = 0;
+		int i = start;
+		int j = middle + 1;
+		int pos = i;
 		
 		// i = varável de controle para posições do array1
 		// j = varável de controle para posições do array2
-		while(i < array1.length && j < array2.length) {
-			if(array1[i] < array2[j]) {
-				array[pos] = array1[i];
+		while(i <= middle && j <= end) {
+			if(arrayAux[i] < arrayAux[j]) {
+				array[pos] = arrayAux[i];
 				i++;
 			} else {
-				array[pos] = array2[j];
+				array[pos] = arrayAux[j];
 				j++;
 			}
 			
@@ -29,10 +38,10 @@ public class MergeSort extends SortingAlgorithm {
 		
 		// Caso ainda existam elementos não posicionados em um dos arrays,
 		// todo o restante do array deve ser adicionado ao array resultante
-		while(i < array1.length) 
-			array[pos++] = array1[i++];
-		while(j < array2.length)
-			array[pos++] = array2[j++];
+		while(i <= middle) 
+			array[pos++] = arrayAux[i++];
+		while(j < end)
+			array[pos++] = arrayAux[j++];
 		
 		return array;
 	}
