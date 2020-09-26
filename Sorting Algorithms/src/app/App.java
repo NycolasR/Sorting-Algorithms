@@ -53,10 +53,10 @@ public class App {
 		
 //		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 100, 134, 111, 234, 567};
 		
-		arraysController.showArrays(arraysLength500);
-		System.out.println();
-		System.out.println(Arrays.toString(arraysController.sortWithShell(arraysLength500, false)));
-		System.out.println();
-		arraysController.showArrays(arraysLength500);
+//		arraysController.showArrays(arraysLength250000);
+//		System.out.println();
+		System.out.println(Arrays.toString(arraysController.sortWithShell(arraysLength250000, false)));
+//		System.out.println();
+//		arraysController.showArrays(arraysLength500);
 	}
 }
