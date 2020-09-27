@@ -51,12 +51,16 @@ public class App {
 		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
 //		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 123};
+//		
+//		MergeSort mg = new MergeSort();
+//		mg.sortWithMerge(array, 0, array.length-1);
+//		System.out.println(Arrays.toString(array));
 		
-//		arraysController.showArrays(arraysLength50);
+//		arraysController.showArrays(arraysLength5000);
 //		System.out.println();
 		System.out.println(Arrays.toString(arraysController.sortWithMerge(arraysLength250000)));
 //		System.out.println();
-//		arraysController.showArrays(arraysLength50);
+//		arraysController.showArrays(arraysLength1000);
 		
 	}
 }

@@ -1,72 +1,70 @@
 package algorithms;
 
-import java.util.Arrays;
-
 public class MergeSort extends SortingAlgorithm {
 	@Override
 	public void sortWithMerge(long[] array, int i, int f) {
-		
 		if(i < f) {
 			int middle = (i + f) / 2;
 			sortWithMerge(array, i, middle);
 			sortWithMerge(array, middle+1, f);
 			merge(array, i, middle, f);
 		}
-		
 	}
-	
-	private void merge(long arr[], int l, int m, int r) 
-    { 
-        // Find sizes of two subarrays to be merged 
-        int n1 = m - l + 1; 
-        int n2 = r - m; 
+
+	public void merge(long array[], int left, int middle, int right) { 
+        // Obtendo o tamanho dos subarrays a serem intercalados 
+        int n1 = middle - left + 1; 
+        int n2 = right - middle; 
   
-        /* Create temp arrays */
-        long L[] = new long[n1]; 
-        long R[] = new long[n2]; 
+        // Criação dos arrays temporários
+        long Left[] = new long[n1]; 
+        long Right[] = new long[n2]; 
   
-        /*Copy data to temp arrays*/
+        // Respectivos valores copiados para os arrays temporários
         for (int i = 0; i < n1; ++i) 
-            L[i] = arr[l + i]; 
+            Left[i] = array[left + i]; 
         for (int j = 0; j < n2; ++j) 
-            R[j] = arr[m + 1 + j]; 
-  
-        /* Merge the temp arrays */
-  
-        // Initial indexes of first and second subarrays 
+            Right[j] = array[middle + 1 + j];
+        
+        /* Intercalando os arrays temporários */
+        // Indices iniciais do primeiro e segundo subarrays 
         int i = 0, j = 0; 
   
-        // Initial index of merged subarry array 
-        int k = l; 
+        // Indicice inicial do array intercalado 
+        int k = left; 
         while (i < n1 && j < n2) { 
-            if (L[i] <= R[j]) { 
-                arr[k] = L[i]; 
+            if (Left[i] <= Right[j]) { 
+                array[k] = Left[i]; 
                 i++; 
-            } 
-            else { 
-                arr[k] = R[j]; 
+            } else { 
+                array[k] = Right[j]; 
                 j++; 
             } 
             k++; 
         } 
   
-        /* Copy remaining elements of L[] if any */
+        // Copia dos elementos restantes de Left[] se existirem
         while (i < n1) { 
-            arr[k] = L[i]; 
+            array[k] = Left[i]; 
             i++; 
             k++; 
         } 
   
-        /* Copy remaining elements of R[] if any */
+        // Copia dos elementos restantes de Right[] se existirem
         while (j < n2) { 
-            arr[k] = R[j]; 
+            array[k] = Right[j]; 
             j++; 
             k++; 
-        } 
+        }
     }
-	
+
+
+
+
 //	private long[] merge(long[] array, int start, int middle, int end) {
+//		long s = System.currentTimeMillis();
 //		long[] arrayAux = Arrays.copyOf(array, array.length);
+//		System.out.println(System.currentTimeMillis() - s);
 //		
 //		int i = start;
 //		int j = middle + 1;
