@@ -46,17 +46,17 @@ public class App {
 		}
 		
 		FacadeAlgorithms facadeAlgorithms = new FacadeAlgorithms();
-//		facadeAlgorithms.setAlgoritmo(new QuickSort());
-		facadeAlgorithms.setAlgoritmo(new RadixSort());
+		facadeAlgorithms.setAlgoritmo(new MergeSort());
 		
 		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
-		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 123};
+//		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 123};
 		
-		arraysController.showArrays(arraysLength50);
-		System.out.println();
-		System.out.println(Arrays.toString(arraysController.sort(arraysLength50)));
-		System.out.println();
-		arraysController.showArrays(arraysLength50);
+//		arraysController.showArrays(arraysLength50);
+//		System.out.println();
+		System.out.println(Arrays.toString(arraysController.sortWithMerge(arraysLength250000)));
+//		System.out.println();
+//		arraysController.showArrays(arraysLength50);
+		
 	}
 }

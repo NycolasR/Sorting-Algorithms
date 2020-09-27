@@ -21,7 +21,7 @@ public class ArraysController {
 		// [6]: media dos 5 tempos
 		double[] milliseconds = new double[6];
 		
-		// Somat�ria dos tempos
+		// Somatória dos tempos
 		double total = 0;
 		
 		for(int i = 0; i < arrays.length; i++) {	
@@ -39,7 +39,7 @@ public class ArraysController {
 		// [6]: media dos 5 tempos
 		double[] milliseconds = new double[6];
 		
-		// Somat�ria dos tempos
+		// Somatória dos tempos
 		double total = 0;
 		
 		for(int i = 0; i < arrays.length; i++) {	
@@ -81,7 +81,7 @@ public class ArraysController {
 		// [6]: media dos 5 tempos
 		double[] milliseconds = new double[6];
 		
-		// Somat�ria dos tempos
+		// Somatória dos tempos
 		double total = 0;
 		
 		for(int i = 0; i < arrays.length; i++) {	

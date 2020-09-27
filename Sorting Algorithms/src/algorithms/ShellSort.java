@@ -17,12 +17,11 @@ public class ShellSort extends SortingAlgorithm {
 		System.out.println(isFirstWay ? "First Way" : "Second Way");
 		
 		ArrayList<Long> hs = isFirstWay ? this.calculateGapFirstWay(array) : this.calculateGapSecondWay(array);
-		
+		System.out.println(hs);
 		Instant start = Instant.now();
 		
 		for(long h: hs) {
 			int h_tmp = (int) h;
-//			System.out.println(h_tmp);
 			for(int i = 0; (i+h) < array.length; i++) { // (i+h) para não passar dos limites do array
 				int j = i + h_tmp;
 				long number = array[j];
@@ -65,7 +64,6 @@ public class ShellSort extends SortingAlgorithm {
 			hs.add(h);
 			h = (long) (Math.pow(4, k) + 3 * Math.pow(2, k-1) + 1);
 		}
-		System.out.println(hs);
 		Collections.reverse(hs);
 		return hs;
 	}
