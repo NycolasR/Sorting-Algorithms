@@ -1,6 +1,7 @@
 package app;
 
 import java.util.Arrays;
+import java.util.List;
 
 import algorithms.*;
 import controllers.ArraysController;
@@ -46,21 +47,25 @@ public class App {
 		}
 		
 		FacadeAlgorithms facadeAlgorithms = new FacadeAlgorithms();
-		facadeAlgorithms.setAlgoritmo(new MergeSort());
+//		facadeAlgorithms.setAlgoritmo(new RadixSort());
+		
+		long s = System.currentTimeMillis();
+		List[] aux = new List[10];
+		System.out.println(System.currentTimeMillis() - s);
 		
 		ArraysController arraysController = new ArraysController(facadeAlgorithms);
 		
 //		long[] array = {11, 24, 12, 15, 78, 17, 95, 97, 55, 10, 99, 123};
-//		
+		
 //		MergeSort mg = new MergeSort();
 //		mg.sortWithMerge(array, 0, array.length-1);
 //		System.out.println(Arrays.toString(array));
 		
 //		arraysController.showArrays(arraysLength5000);
 //		System.out.println();
-		System.out.println(Arrays.toString(arraysController.sortWithMerge(arraysLength250000)));
+		System.out.println(Arrays.toString(arraysController.sort(arraysLength250000)));
 //		System.out.println();
-//		arraysController.showArrays(arraysLength1000);
+//		arraysController.showArrays(arraysLength5000);
 		
 	}
 }

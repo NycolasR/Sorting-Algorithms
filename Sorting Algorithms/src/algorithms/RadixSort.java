@@ -21,7 +21,6 @@ public class RadixSort extends SortingAlgorithm {
 		// que fizer parte da sequência.
 		// Variável usada para controlar o laço mais externo.
 		int totRepetitions = totDigits(bigger);
-		
 		for(int i = 1; i <= totRepetitions; i++) {
 			
 			for (int j = 0; j < aux.length; j++) {	
